@@ -1,32 +1,47 @@
+// Add Event on submit in form
 document.forms["calculatorForm"].onsubmit = function(event){
+  // No reload after submit
   event.preventDefault();
 
+  // declar variable
   const usia = document.getElementById("usia").value;
   const jenisKelamin = document.getElementById("gender").value;
   const berat = document.getElementById("berat").value;
   const tinggi = document.getElementById("tinggi").value/100;
 
+  // call fucntion
   doHitungBMI(usia,berat,tinggi);
 
+// auto reset after submit
   document.forms["calculatorForm"].reset();
 }
 
+// make function
 function doHitungBMI(usia, berat, tinggi){
+  // handle try catch
   try {
+    // get result for BMI
     let result = berat / (tinggi*tinggi);
 
+    // declar variable result DOM
     const mainTitle = document.getElementById("mainTitle");
     const mainSubtitle = document.getElementById("mainSubtitle");
     const mainNilai = document.getElementById("mainNilai");
     const detailHasil = document.getElementById("detailHasil");
     const detailKategori = document.getElementById("detailKategori");
 
+    // changes format number on float
     mainNilai.innerHTML = result.toFixed(1);  
+
+    // declar regular expression
     const regExp = /[0-9]$/;
+
+    // decision regExp to check validation form
     if(!regExp.test(usia)) return alert("Hanya boleh bilangan bulat 0-9");
     if(!regExp.test(berat)) return alert("Hanya boleh bilangan bulat 0-9");
     if(!regExp.test(tinggi)) return alert("Hanya boleh bilangan bulat 0-9");
 
+    // check result 
     if(result.toFixed(2) < 18.5){
       mainTitle.innerText = "Kekurangan berat badan";
       mainSubtitle.innerText = "Anda kekurangan berat badan";
@@ -49,13 +64,10 @@ function doHitungBMI(usia, berat, tinggi){
       detailKategori.innerText = "Kegemukan (Obesitas)";
     }
 
+    // display result on screen
     const displayResult = document.getElementById("calculatorResult");
     displayResult.style.display = "block";
   } catch (error) {
     console.error(error);
   }
 }
-
-document.getElementById('usia').oninput = ()=>{
-  
-};
