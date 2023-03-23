@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Kalkulator BMI</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-title">Mayutama</div>
+    </header>
+    <main class="container">
+      <section id="calculator">
+        <div class="calculator-header">
+          <h1 class="calculator-title">Kalkulator BMI</h1>
+          <p class="calculator-subtitle">
+            Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.          </p>
+        </div>
+        <form class="calculator-form" name="calculatorForm">
+          <div class="input-form">
+            <div class="form-group">
+              <label id="gender" for="gender">
+                <p class="label-gender">Jenis Kelamin</p>
+                <div class="radio-group">
+                  <input type="radio" name="gender" id="gender" value="Laki-Laki" required><i class="fa-solid fa-mars" >&nbsp; Laki-Laki</i>
+                </div>
+                <div class="radio-group">
+                  <input type="radio" name="gender" id="gender" value="Perempuan" required><i class="fa-solid fa-venus" >&nbsp; Perempuan</i>
+                </div>
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="input-gender">
+                <p>Usia</p>
+                <input type="text" name="usia" id="usia" required autocomplete="off">
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="input-gender">
+                <p>Berat</p>
+                <input type="text" name="berat" id="berat" required autocomplete="off">
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="input-gender">
+                <p>Tinggi</p>
+                <input type="text" name="tinggi" id="tinggi" required autocomplete="off">
+              </label>
+            </div>
+          </div>
+          <input type="submit" class="btn btn-submit" id="hitung" value="Hitung">
+        </form>
+        <div class="calculator-result" id="calculatorResult">
+          <h1>Hasil</h1>
+          <div class="card-main">
+            <h3 id="mainTitle">Berat Badan Lebih</h3>
+            <p id="mainNilai">24.7</p>
+            <p id="mainSubtitle">Anda Memiliki Berat Badan Lebih</p>
+            <button class="btn-primary">Download Hasil BMI</button>
+          </div>
+          <div class="result-detail">
+            <p>Hasil BMI diantara <span id="detailHasil"><strong>23 dan 25</strong></span></p>
+            <p>Anda berada dalam kategori <span id="detailKategori"><strong>overweight atau berat badan berlebih.</strong></span></p>
+            <p id="detailSolusi">Cara terbaik untuk menurunkan berat badan adalah dengan mengatur kalori makanan yang dikonsumsi dan berolahraga.</p>
+            <p id="detailSolusi">Jika BMI anda berada dalam kategori ini maka Anda dianjurkan untuk menurunkan berat badan hingga batas normal.</p>
+            <div class="btn-group">
+              <button class="btn btn-blue">Konsultasi Ahli Gizi Via Whatapp</button>
+              <button class="btn btn-blue">Registrasi Online Ahli Gizi</button>
+            </div>
+          </div>
+        </div>
+        <div class="calculator-penyakit">
+          <p>BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang. Anda perlu konsultasi lebih lanjut mengenal resiko dan kekhawatiran Anda terkait dengan berat badan Anda</p>
+          <div class="card-penyakit">
+              <h3>Beberapa penyakit yang berasal dari kegemukan</h3>
+              <ul>
+                <li>Diabetes</li>
+                <li>Hipertensi</li>
+                <li>Sakit Jantung</li>
+                <li>Osteoarthritis</li>
+              </ul>
+              <div class="btn-group">
+                <button class="btn btn-blue">Konsultasi Ahli Gizi Via Aplikasi</button>
+                <button class="btn btn-blue">Registrasi Online Ahli Gizi</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>&copy; Mayutama 2023</span>
+    </footer>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
